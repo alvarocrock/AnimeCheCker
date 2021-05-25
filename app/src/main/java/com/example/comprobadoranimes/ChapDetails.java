@@ -38,7 +38,6 @@ public class ChapDetails extends AppCompatActivity {
         decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN); //elemina barra de estaado (wifi, cobertura, fecha, hora etc...)
         video = findViewById(R.id.Video); //inicialza video viewer
         contro = MainController.getSingleton(); // Obtiene singleton del controlador
-        Bum = findViewById(R.id.botonum); //define biton de opciñon de um
         BMega = findViewById(R.id.botonmega); //define biton de opciñon de mega
         BJK = findViewById(R.id.botonjk); //define boton jk
         Bokru = findViewById(R.id.botonokru); //fefine boton okru
@@ -66,9 +65,6 @@ public class ChapDetails extends AppCompatActivity {
         }
         if (details.getVideomega()==null){
             BMega.setEnabled(false);
-        }
-        if (details.getVideoum()==null){
-            Bum.setEnabled(false);
         }
         if (details.getVideookru()==null){
             Bokru.setEnabled(false);
@@ -102,22 +98,6 @@ public class ChapDetails extends AppCompatActivity {
 
     }
 
-    /**
-     * Carga video de UM
-     * @param v
-     */
-    public void loadum(View v){
-        Toast toast1 =
-                Toast.makeText(getApplicationContext(),
-                        "Loading...", Toast.LENGTH_SHORT);
-
-        toast1.show();
-        video.loadUrl(details.getVideoum());
-        Bum.setAlpha(0.7f);
-        BMega.setAlpha(1f);
-        BJK.setAlpha(1f);
-        Bokru.setAlpha(1f);
-    }
 
     /**
      * Carga video de Mega
@@ -130,7 +110,6 @@ public class ChapDetails extends AppCompatActivity {
 
         toast1.show();
         video.loadUrl(details.getVideomega());
-        Bum.setAlpha(1f);
         BMega.setAlpha(0.7f);
         BJK.setAlpha(1f);
         Bokru.setAlpha(1f);
@@ -147,7 +126,6 @@ public class ChapDetails extends AppCompatActivity {
 
         toast1.show();
         video.loadUrl(details.getVideookru());
-        Bum.setAlpha(1f);
         BMega.setAlpha(1f);
         BJK.setAlpha(1f);
         Bokru.setAlpha(0.7f);
@@ -164,7 +142,6 @@ public class ChapDetails extends AppCompatActivity {
 
         toast1.show();
         video.loadUrl(details.getVideojk());
-        Bum.setAlpha(1f);
         BMega.setAlpha(1f);
         BJK.setAlpha(0.7f);
         Bokru.setAlpha(1f);
