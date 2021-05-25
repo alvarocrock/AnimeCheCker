@@ -19,7 +19,6 @@ public class ChapDetails extends AppCompatActivity {
     private Models.ChapDetails details;
     //private TextView title;
     private WebView video;
-    private Button Bum;
     private Button BMega;
     private Button BJK;
     private Button Bokru;
