@@ -3,6 +3,7 @@ package Controllers;
 
 
 import android.os.AsyncTask;
+import android.os.StrictMode;
 
 import java.util.Properties;
 import javax.mail.Message;
@@ -35,6 +36,8 @@ public class ControladorCorreos  extends AsyncTask<Void,Void,Void> {
      */
 	public ControladorCorreos(String destinatario, String asunto, String cuerpo) {
 	    super();
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 	    this.asunto=asunto;
 	    this.cuerpo=cuerpo;
 	    this.destinatario=destinatario;
