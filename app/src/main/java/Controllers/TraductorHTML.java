@@ -153,7 +153,7 @@ public class TraductorHTML {
             if (s.contains("um.")){
                 list= s.split("\"");
                 details.setVideoum(list[3]);
-            } else if (s.contains("mega.nz")){
+            } else if (s.contains("mega.nz") && s.contains("video[")){
                 list= s.split("\"");
                 details.setVideomega(list[1]);
             }  else if (s.contains("jk.")){
