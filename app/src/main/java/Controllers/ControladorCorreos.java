@@ -36,6 +36,7 @@ public class ControladorCorreos  extends AsyncTask<Void,Void,Void> {
      */
 	public ControladorCorreos(String destinatario, String asunto, String cuerpo) {
 	    super();
+	    //Permitimos que se envie el correo electronico
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 	    this.asunto=asunto;
@@ -46,7 +47,6 @@ public class ControladorCorreos  extends AsyncTask<Void,Void,Void> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        //Show progress dialog while sending email
 
     }
 
@@ -60,12 +60,11 @@ public class ControladorCorreos  extends AsyncTask<Void,Void,Void> {
 
     @Override
     protected Void doInBackground(Void... params) {
-        
         return null;
     }
 
     /**
-     * Envia correo por gamil
+     * Envia correo por Gamil
      */
     public void enviarConGMail() {
     	String remitente = Constantes.CORREO;  //Para la direcci�n nomcuenta@gmail.com

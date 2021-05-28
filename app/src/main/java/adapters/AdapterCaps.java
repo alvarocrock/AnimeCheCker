@@ -68,6 +68,10 @@ public class AdapterCaps extends RecyclerView.Adapter<AdapterCaps.ViewHolderDato
 
     }
 
+    /**
+     * Adapter datos de cspitulo
+     * @author alvar
+     */
     public class ViewHolderDatos extends RecyclerView.ViewHolder {
 
         TextView serie;

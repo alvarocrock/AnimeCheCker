@@ -21,7 +21,7 @@ import Models.Serie;
 import adapters.AdapterSeries;
 
 /**
- * clase que cotrola las series actuales
+ * Clase que cotrola las series actuales
  */
 public class list_seri_act extends AppCompatActivity implements SearchView.OnQueryTextListener{
 
@@ -74,7 +74,7 @@ public class list_seri_act extends AppCompatActivity implements SearchView.OnQue
     }
 
     /**
-     * Inicialozamos listeners
+     * Inicialozamos listeners para la barra buscadora
      */
     public void inilisteners(){
         search.setOnQueryTextListener(this);

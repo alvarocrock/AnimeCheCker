@@ -37,7 +37,7 @@ public class ControllerPersistencia  {
 	}
 
 	/**
-	 * Escribe fichero xml de series
+	 * Escribe fichero xml con las series
 	 * @param lista
 	 */
 	public void guardarseries(ArrayList<Serie> lista) {

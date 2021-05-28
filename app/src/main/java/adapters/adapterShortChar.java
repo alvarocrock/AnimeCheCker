@@ -60,6 +60,10 @@ public class adapterShortChar extends RecyclerView.Adapter<adapterShortChar.View
         }
     }
 
+    /**
+     * Adapter datos de ShortChar
+     * @author alvar
+     */
     public class ViewHolderDatos extends RecyclerView.ViewHolder {
 
         TextView titulo;

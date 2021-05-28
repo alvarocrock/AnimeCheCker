@@ -90,6 +90,10 @@ public class AdapterSeries extends RecyclerView.Adapter<AdapterSeries.AdapterSer
         notifyDataSetChanged();
     }
 
+    /**
+     * Adapter datos de serie
+     * @author alvar
+     */
     public class AdapterSeriesDatos extends RecyclerView.ViewHolder {
 
         TextView titulo;

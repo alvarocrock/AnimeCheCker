@@ -19,7 +19,7 @@ public class ControllerComparador {
 	 * Compara dos listas, la lista antigua con la lista nueva y devuelve una lista con los valores diferentes
 	 * @param antigua
 	 * @param nueva
-	 * @return
+	 * @return restante
 	 */
 	public ArrayList<Capitulo> comparacap(ArrayList<Capitulo> antigua,ArrayList<Capitulo> nueva){
 		ArrayList<Capitulo> restante= new ArrayList<>();
@@ -46,7 +46,7 @@ public class ControllerComparador {
 	 * Compara dos listas, la lista antigua con la lista nueva y devuelve una lista con los valores diferentes
 	 * @param antigua
 	 * @param nueva
-	 * @return
+	 * @return restante
 	 */
 	public ArrayList<Serie> comparaserie(ArrayList<Serie> antigua,ArrayList<Serie> nueva){
 		ArrayList<Serie> restante= new ArrayList<>();

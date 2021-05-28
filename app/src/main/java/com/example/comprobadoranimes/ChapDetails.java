@@ -99,7 +99,7 @@ public class ChapDetails extends AppCompatActivity {
 
 
     /**
-     * Carga video de Mega
+     * Carga video de Mega y ajusta el alpha de los botones
      * @param v
      */
     public void loadmega(View v){
@@ -115,7 +115,7 @@ public class ChapDetails extends AppCompatActivity {
     }
 
     /**
-     * Carga video de ok.ru
+     * Carga video de ok.ru y ajusta el alpha de los botones
      * @param v
      */
     public void loadokru(View v){
@@ -131,7 +131,7 @@ public class ChapDetails extends AppCompatActivity {
     }
 
     /**
-     * Carga video de jk
+     * Carga video de jk y ajusta el alpha de los botones
      * @param v
      */
     public void loadjk(View v){

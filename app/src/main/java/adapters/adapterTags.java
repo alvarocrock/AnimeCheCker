@@ -38,11 +38,17 @@ public class adapterTags extends RecyclerView.Adapter<adapterTags.ViewHolderDato
         holder.asignarDatos(lista.get(position));
     }
 
+    /**
+     * Obtiene el tamaño de la lista de objrtod
+     * @return
+     */
     @Override
     public int getItemCount() {
         return lista.size();
     }
 
+
+    
     public class ViewHolderDatos extends RecyclerView.ViewHolder {
 
         TextView text;

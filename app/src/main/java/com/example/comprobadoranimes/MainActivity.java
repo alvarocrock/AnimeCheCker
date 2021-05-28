@@ -33,7 +33,7 @@ import Models.Usuario;
 import adapters.AdapterSeries;
 
 /**
- * clase que controla la pantalla principal del programa
+ * Clase que controla la pantalla principal del programa
  */
 public class MainActivity extends AppCompatActivity{
 
@@ -62,10 +62,6 @@ public class MainActivity extends AppCompatActivity{
 
     }
 
-
-
-
-
     /**
      * Inicializa datos
      */
@@ -87,7 +83,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     /**
-     * Navegación a lista
+     * Navega a lista de series
      * @param view
      */
     public void goToListSeri(View view){
@@ -106,18 +102,24 @@ public class MainActivity extends AppCompatActivity{
 
     
     /**
-     * Comprueba si hay cambios
+     * Comprueba si hay cambios, si hay cambios y la opción de enviar correo esta seleccionada, <br/>
+     * enviará un correo
      * @param view
      */
     public void CheckAll(View view){
 
+        //reseteamos contenido de log
+        log.setText("");
+        log.setBackgroundColor(Color.WHITE);
+        //mensaje de cargando
         Toast toast1 =
                 Toast.makeText(getApplicationContext(),
                         "Loading...", Toast.LENGTH_SHORT);
 
         toast1.show();
+
             contro.comprobartodo(TFuser.getText().toString(), TFemail.getText().toString(), swich.isChecked());
-            //nos aseguramos que el código de repsuesta sea corrrecto
+            //nos aseguramos que el código de repsuesta sea corrrecto (200 bueno)
             if (contro.getReponse()>=200 && contro.getReponse()<300) {
                 if (contro.getcapsize() > 0 && contro.getseriesize() > 0) {
                     log.setText("There's new stuff");

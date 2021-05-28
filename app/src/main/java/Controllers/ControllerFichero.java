@@ -47,7 +47,7 @@ public class ControllerFichero {
 
 
 	/**
-	 * Retorna el ultimo usuario guardado
+	 * Retorna el usuario guardado
 	 * @return
 	 */
 	public Usuario getdestinatario(){

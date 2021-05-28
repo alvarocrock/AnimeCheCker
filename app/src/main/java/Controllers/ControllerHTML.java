@@ -35,7 +35,8 @@ public class ControllerHTML extends AsyncTask<Void, String, Void>  {
     private String option;
 
     /**
-     * Constructor
+     * Constructor, si de le dala opción "main", obtiene lista de sreies y capitulos, <br/>
+     *
      * @param url
      * @param option
      */
@@ -81,7 +82,7 @@ public class ControllerHTML extends AsyncTask<Void, String, Void>  {
     
 
     /**
-     * Comportamineto para obtener la conexion del htm
+     * Comportamineto para obtener la conexion del htm, con la url del constructor
      * @return conexion
      */
     public void conectar() {
@@ -103,7 +104,7 @@ public class ControllerHTML extends AsyncTask<Void, String, Void>  {
     }
 
     /**
-     * Comportamineto para obtener la conexion del html
+     * Comportamineto para obtener la conexion del html, para la url de emisión
      * @return conexion
      */
     public void conectar2() {
@@ -127,7 +128,6 @@ public class ControllerHTML extends AsyncTask<Void, String, Void>  {
 
     /**
      * Comportamineto para obtener una ArrayList con las series
-     *
      * @return lista
      */
     protected ArrayList<String> getseries() {
@@ -183,7 +183,6 @@ public class ControllerHTML extends AsyncTask<Void, String, Void>  {
 
     /**
      * Comportaamineto para obtener una ArrayList con los capitulos
-     *
      * @return lista
      */
     protected ArrayList<String> getcapitulos() {
@@ -277,7 +276,6 @@ public class ControllerHTML extends AsyncTask<Void, String, Void>  {
 
     /**
      * Comportamiento para obtener html que se traducira a detalles de serie
-     *
      * @return lista
      */
     protected ArrayList<String> getSeriDetails() {
@@ -401,10 +399,18 @@ public class ControllerHTML extends AsyncTask<Void, String, Void>  {
         this.fin = fin;
     }
 
+    /**
+     * Obtiene el código de repsuesta
+     * @return
+     */
     public int getCode() {
         return code;
     }
 
+    /**
+     * Setter del código de respuesta
+     * @param code
+     */
     public void setCode(int code) {
         this.code = code;
     }

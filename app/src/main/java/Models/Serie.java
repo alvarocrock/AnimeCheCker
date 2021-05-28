@@ -121,10 +121,18 @@ public class Serie {
         return tipo+": "+nombre+"\n"+"\n"+ref+"\n"+"\n";
     }
 
+    /**
+     * Getter de dia
+     * @return dia
+     */
     public String getDia() {
         return dia;
     }
 
+    /**
+     * Setter de dia
+     * @param dia
+     */
     public void setDia(String dia) {
         this.dia = dia;
     }

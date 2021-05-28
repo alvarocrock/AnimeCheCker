@@ -15,7 +15,6 @@ import Models.Usuario;
 
 /**
  * Controlador que va a llevar el flujo del proceso
- *
  * @author alvar
  */
 public class MainController  {
@@ -98,7 +97,7 @@ public class MainController  {
     }
 
     /**
-     * comportamiento que crea las listas
+     * Comportamiento que crea las listas
      */
     public void crearlistas(String URL, String option) {
         //bug al notificar por pantalla si hay cambios o no
@@ -153,7 +152,7 @@ public class MainController  {
     }
 
     /**
-     * Comprueba todo los cambios, sii hay cambios envia correo
+     * Comprueba todos los cambios, si hay cambios envia correo
      * @param nombre
      * @param correo
      * @param send
@@ -180,8 +179,13 @@ public class MainController  {
                 mail.execute();
             }
         }
-        persi.guardarcaps(caps_actuales);
-        persi.guardarseries(series_actuales);
+
+        if (caps_actuales.size()>0) {
+            persi.guardarcaps(caps_actuales);
+        }
+        if (series_actuales.size()>0) {
+            persi.guardarseries(series_actuales);
+        }
         //test();
 
 
@@ -228,7 +232,6 @@ public class MainController  {
 
     /**
      * Obtiene el usuario guardado
-     *
      * @return user
      */
     public Usuario Getuser() {
@@ -238,7 +241,6 @@ public class MainController  {
 
     /**
      * Guarda datos del usuario como persistencia
-     *
      * @param user
      */
     public void SafeUser(Usuario user) {
@@ -264,7 +266,6 @@ public class MainController  {
 
     /**
      * retorna la longitud de la lista de capitulos nuevos
-     *
      * @return
      */
     public int getcapsize() {
@@ -273,7 +274,6 @@ public class MainController  {
 
     /**
      * retona la longitud de las series nuevas
-     *
      * @return
      */
     public int getseriesize() {

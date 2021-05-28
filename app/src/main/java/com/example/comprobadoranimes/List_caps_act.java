@@ -66,7 +66,7 @@ public class List_caps_act extends AppCompatActivity {
                 startActivity(myintent); //inicializa nueva activity o pantalla
             }
         });
-        listcaps.setAdapter(ASeries); //asigna el adapter al rectcled view
+        listcaps.setAdapter(ASeries); //asigna el adapter al recycled view
 
     }
 

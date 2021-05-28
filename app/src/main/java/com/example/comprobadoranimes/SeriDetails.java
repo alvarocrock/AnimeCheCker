@@ -79,7 +79,7 @@ public class SeriDetails extends AppCompatActivity {
             url = Constantes.url+details.getImage();
         }
         Picasso.get().load(url).into(image);
-
+        //inicializa recycled view
         adapterTags adaptertag= new adapterTags(details.getTags());
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         tags.setLayoutManager(layoutManager);
@@ -87,6 +87,7 @@ public class SeriDetails extends AppCompatActivity {
 
         ArrayList<ShortChap> chapters= details.getChaps();
 
+        //inicializa recycled view
         adapterShortChar adapterchar = new adapterShortChar(chapters, new View.OnClickListener() {
             @Override
             public void onClick(View v) {

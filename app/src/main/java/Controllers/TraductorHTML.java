@@ -12,7 +12,6 @@ import Models.Tag;
 
 /**
  * Clase que traduce el html a objetos
- *
  * @author alvar
  */
 public class TraductorHTML {
@@ -23,7 +22,6 @@ public class TraductorHTML {
 
     /**
      * Obtiene array list de series
-     *
      * @param lista
      * @return series
      */
@@ -82,7 +80,6 @@ public class TraductorHTML {
 
     /**
      * Obtine array list de capitulos
-     *
      * @param lista
      * @return capitulos
      */
@@ -169,7 +166,6 @@ public class TraductorHTML {
 
     /**
      * Devuelve detalles de una serie
-     *
      * @param list
      * @return details
      */
@@ -256,6 +252,7 @@ public class TraductorHTML {
 
         }
 
+        //Rellenamos lista de ShortChap
         for (int cont=0;cont<Integer.parseInt(details.getTotalChap());cont++){
             int ep= cont+1;
             name= "Episodio "+ep;
