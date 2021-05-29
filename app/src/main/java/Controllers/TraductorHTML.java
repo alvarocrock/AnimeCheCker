@@ -107,11 +107,14 @@ public class TraductorHTML {
                 }
 
             }else if (s.contains("<h5>")){
-                s= s.replace("<",";");
-                s= s.replace(">",";");
-                list = s.split(";");
+                s= s.replace("<","ç");
+                s= s.replace(">","ç");
+                list = s.split("ç");
                 if (list.length==4){
                     nombre = list[2];
+                    if (nombre.contains("&#039;")){
+                        nombre= nombre.replace("&#039;","'");
+                    }
                 }
             }else if (s.contains("</h6>")){
                 s= s.replace("<",";");
@@ -191,6 +194,9 @@ public class TraductorHTML {
                 lista= s.split("ç");
                 if (lista.length==4) {
                     details.setTitulo(lista[2]);
+                    if (details.getTitulo().contains("&#039;")){
+                        details.setTitulo(details.getTitulo().replace("&#039;","'"));
+                    }
                 }
             } else if ((s.contains("</p>") || s.contains("<p>")) && details.getDescription()==null){
                 s= s.replace("<","ç");
