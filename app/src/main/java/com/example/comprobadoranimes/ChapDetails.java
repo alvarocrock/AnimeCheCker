@@ -87,11 +87,17 @@ public class ChapDetails extends AppCompatActivity {
             video.loadUrl(details.getVideojk()); //opción por defecto si el video de mazon existe en este caso es necesario pasarel antes la url princial
             BJK.setAlpha(0.7f); //definir alpha especial
             BMega.setAlpha(1f);
-        } else {
+            Bokru.setAlpha(1f);
+        } else if (details.getVideomega()!=null){
             video.loadUrl(details.getVideomega()); //carga opciond e mega si amazon es null
             BJK.setAlpha(1f);
             BMega.setAlpha(0.7f); //define alpha especial
-
+            Bokru.setAlpha(1f);
+        } else {
+            video.loadUrl(details.getVideookru()); //carga opciond e mega si amazon es null
+            BJK.setAlpha(1f);
+            BMega.setAlpha(1f);
+            Bokru.setAlpha(0.7f); //define alpha especial
         }
 
 
