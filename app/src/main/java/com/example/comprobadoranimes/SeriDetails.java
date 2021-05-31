@@ -107,9 +107,6 @@ public class SeriDetails extends AppCompatActivity {
         LinearLayoutManager layoutManager2 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         caps.setLayoutManager(layoutManager2);
         caps.setAdapter(adapterchar);
-        caps.addItemDecoration(new DividerItemDecoration(this,
-                DividerItemDecoration.VERTICAL));
-
 
 
     }
