@@ -3,6 +3,7 @@ package com.example.comprobadoranimes;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -70,6 +71,8 @@ public class list_seri_act extends AppCompatActivity implements SearchView.OnQue
         });
 
         listseries.setAdapter(ASeries); //asignamos el adaptador
+        listseries.addItemDecoration(new DividerItemDecoration(this,
+                DividerItemDecoration.VERTICAL));
 
     }
 
