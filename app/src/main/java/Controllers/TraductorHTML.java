@@ -202,9 +202,11 @@ public class TraductorHTML {
                 s= s.replace("<","ç");
                 s= s.replace(">","ç");
                 lista= s.split("ç");
-                if (s.contains("ç/pç") && s.contains("çpç")){
+                if (s.contains("ç/pç")){
                     if (lista.length == 4) {
                         details.setDescription(lista[2]);
+                    } else if (lista.length == 2) {
+                        details.setDescription(lista[0]);
                     }
                 } else {
                     if (lista.length == 2) {
