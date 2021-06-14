@@ -90,6 +90,7 @@ public class TraductorHTML {
         String capitulo = null;
         String referencia = null;
         String imagen = null;
+        String tipo = null;
         String[] list;
 
         for (String s : lista) {
@@ -116,6 +117,14 @@ public class TraductorHTML {
                         nombre= nombre.replace("&#039;","'");
                     }
                 }
+            } else if (s.contains("<h6>")){
+                s= s.replace("<","ç");
+                s= s.replace(">","ç");
+                list = s.split("ç");
+                if (list.length==3){
+                    tipo = list[2];
+                    tipo = tipo.replace(" ","");
+                }
             }else if (s.contains("</h6>")){
                 s= s.replace("<",";");
                 s= s.replace(">",";");
@@ -129,11 +138,12 @@ public class TraductorHTML {
 
 
             if (nombre != null && referencia != null && imagen != null && capitulo!=null) {
-                capitulos.add(new Capitulo(capitulo,nombre, referencia, imagen));
+                capitulos.add(new Capitulo((tipo+" "+capitulo),nombre, referencia, imagen));
                 capitulo= null;
                 referencia = null;
                 nombre = null;
                 imagen = null;
+                tipo = null;
             }
         }
         return capitulos;

@@ -121,7 +121,7 @@ public class AdapterSeries extends RecyclerView.Adapter<AdapterSeries.AdapterSer
          */
         public void asignarDatos(Serie serie) {
             titulo.setText(serie.getNombre());
-            estado.setText(serie.getEstado());
+            //estado.setText(serie.getEstado());
             dia.setText(serie.getDia());
 
             String url=serie.getImagen();

@@ -96,7 +96,7 @@ public class AdapterCaps extends RecyclerView.Adapter<AdapterCaps.ViewHolderDato
          */
         public void asignardatos(Capitulo cap){
             serie.setText(cap.getSerie());
-            capi.setText("EP"+cap.getCapitulo());
+            capi.setText(cap.getCapitulo());
             String url =cap.getImagen();
             Picasso.get().load(url).resize(150, 240).into(img);
         }
