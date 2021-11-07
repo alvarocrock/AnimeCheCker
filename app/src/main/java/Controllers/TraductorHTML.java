@@ -56,6 +56,8 @@ public class TraductorHTML {
                 list= s.split(";");
                 if (list.length==4){
                     nombre=list[2];
+                } else if (list.length==3){
+                    nombre=list[2];
                 }
 
             } else if (s.contains("<img src=")){
