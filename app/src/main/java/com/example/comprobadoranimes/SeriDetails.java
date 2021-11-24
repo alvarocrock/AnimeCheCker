@@ -99,7 +99,9 @@ public class SeriDetails extends AppCompatActivity {
                                 "Loading...", Toast.LENGTH_SHORT);
 
                 toast1.show();
-                contro.crearlistas(chapters.get(position).getRef(),"chatDetails");
+                contro.crearlistas(chapters.get(position).getRef(), "chatDetails");
+
+
                 //myintent.putExtra("URL",chapters.get(position).getRef());
                 startActivity(myintent);
             }

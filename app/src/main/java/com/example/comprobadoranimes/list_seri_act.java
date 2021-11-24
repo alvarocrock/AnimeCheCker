@@ -65,7 +65,14 @@ public class list_seri_act extends AppCompatActivity implements SearchView.OnQue
                                 "Loading...", Toast.LENGTH_SHORT);
 
                 toast1.show();
-                contro.crearlistas(lista.get(position).getRef(),"contDetails"); //creamos detalles de la serie
+                //si la url de la lista no tiene la url continnua
+                if (!lista.get(position).getRef().contains("https://")) {
+                    contro.crearlistas(Constantes.url + lista.get(position).getRef(), "contDetails"); //creamos detalles de la serie
+                }
+                //si la url de la lista esta completa
+                if (lista.get(position).getRef().contains("https://")) {
+                    contro.crearlistas(lista.get(position).getRef(), "contDetails"); //creamos detalles de la serie
+                }
                 startActivity(myintent); //iniciamos nueva activity
             }
         });
