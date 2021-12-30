@@ -32,6 +32,14 @@ public class Serie {
         this.imagen=imagen;
         this.dia=dia;
     }
+    public Serie(String nombre,String ref,String estado,String imagen,String dia,String tipo) {
+        this.nombre=nombre;
+        this.tipo=tipo;
+        this.ref=ref;
+        this.estado=estado;
+        this.imagen=imagen;
+        this.dia=dia;
+    }
 
     /**
      * Obtiene imagen

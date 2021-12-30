@@ -125,8 +125,11 @@ public class AdapterSeries extends RecyclerView.Adapter<AdapterSeries.AdapterSer
             dia.setText(serie.getDia());
 
             String url=serie.getImagen();
-
-            Picasso.get().load(url).resize(200,300).into(img);
+            if (url!=null) {
+                if (url!="") {
+                    Picasso.get().load(url).resize(200, 300).into(img);
+                }
+            }
         }
     }
 }

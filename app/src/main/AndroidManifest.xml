@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".List_caps_act"></activity>
+        <activity android:name=".Search"></activity>
+        <activity android:name=".List_caps_act" />
         <activity android:name=".ChapDetails" />
         <activity android:name=".SeriDetails" />
         <activity android:name=".list_seri_act" />

@@ -81,6 +81,60 @@ public class TraductorHTML {
     }
 
     /**
+     * Obtiene array list de series de una busqueda
+     * @param lista
+     * @return series
+     */
+    public ArrayList<Serie> getBusqueda(ArrayList<String> lista) {
+        ArrayList<Serie> series = new ArrayList();
+
+        boolean image = false;
+        String[] list;
+        String[] list2;
+        String img = null;
+        String tipo = null;
+        String ref = null;
+        String estado = null;
+        String nombre = null;
+        for (String s : lista) {
+            if (s.contains("data-setbg=")){
+                list= s.split("\"");
+                if (list.length==9) {
+                    if (list.length == 9) {
+                        img = list[5];
+                        ref = list[1];
+                    }
+                }
+            } else if (s.contains("<h5>")){
+                s= s.replace("<","ñ");
+                s= s.replace(">","ñ");
+                list=s.split("ñ");
+                if (list.length==8) {
+                    nombre = list[4];
+                }
+            } else if (s.contains("<li class=\"anime\">")){
+                list=s.split(">");
+                if (list.length==2){
+                    tipo=list[1];
+                }
+            }
+
+            if (ref!=null && nombre!=null && img!=null && tipo!=null){
+                //en el campo dia pongo tipo para que se muestre en pantalla
+                series.add(new Serie(nombre,ref,"",img,tipo));
+                ref=null;
+                nombre=null;
+                img=null;
+                tipo=null;
+            }
+
+        }
+
+        return series;
+
+    }
+
+    /**
      * Obtine array list de capitulos
      * @param lista
      * @return capitulos

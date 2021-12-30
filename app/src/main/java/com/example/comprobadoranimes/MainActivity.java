@@ -91,6 +91,10 @@ public class MainActivity extends AppCompatActivity{
         startActivity(myintent);
     }
 
+    public void goToSearch(View view){
+        Intent myintent= new Intent(MainActivity.this,Search.class);
+        startActivity(myintent);
+    }
     /**
      * Navega a lista de capitulos
      * @param view

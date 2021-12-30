@@ -25,6 +25,7 @@ public class ControllerHTML extends AsyncTask<Void, String, Void>  {
     private ArrayList<String> caps;
     private ArrayList<String> seriDetaails;
     private ArrayList<String> charDetails;
+    private ArrayList<String> SearchSTR;
     boolean fin;
     private int code;
 
@@ -44,6 +45,7 @@ public class ControllerHTML extends AsyncTask<Void, String, Void>  {
         conexion = null;
         this.url = url;
         this.option = option;
+        SearchSTR = new ArrayList<>();
         charDetails = new ArrayList<>();
         series = new ArrayList<>();
         caps = new ArrayList<>();
@@ -67,6 +69,9 @@ public class ControllerHTML extends AsyncTask<Void, String, Void>  {
         }
         if (option.equals("chatDetails")) {
             charDetails = getCharDetails();
+        }
+        if (option.equals("busca")){
+            SearchSTR = getSearch();
         }
         fin = true;
         return null;
@@ -125,6 +130,68 @@ public class ControllerHTML extends AsyncTask<Void, String, Void>  {
         }
     }
 
+
+    /**
+     *
+     * @return
+     */
+    protected ArrayList<String> getSearch(){
+       ArrayList<String> list = new ArrayList<>();
+        BufferedReader br = null;
+
+        try {
+            String linea = "";
+            Boolean escribiendo = false;
+            String antigua=url;
+            String nueva=url;
+            //String prueba = br.readLine();
+
+            while (nueva!=null){
+                url=nueva;
+                conectar();
+                nueva=null;
+                //InputStream hola = conexion.getInputStream();
+                InputStreamReader ireader = new InputStreamReader(conexion.getInputStream());
+                br = new BufferedReader(ireader);
+
+                while ((linea = br.readLine()) != null) {
+
+                    if (linea.contains("<div class=\"col-lg-2 col-md-6 col-sm-6\">")){
+                        escribiendo=true;
+                    }
+                    if (escribiendo==true){
+                        list.add(linea);
+                    }
+                    if (linea.contains("<div class=\"navigation\">") && escribiendo==true){
+                        escribiendo=false;
+                    }
+
+                    if (linea.contains("<a class=\"text nav-next\"")){
+                        String[] split;
+                        split=linea.split("\"");
+                        if (split.length==7){
+                            nueva=split[3];
+                        }
+                    }
+
+                }
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } finally {
+            try {
+                if (br != null) {
+                    br.close();
+                }
+
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+       return list;
+    }
 
     /**
      * Comportamineto para obtener una ArrayList con las series
@@ -413,5 +480,13 @@ public class ControllerHTML extends AsyncTask<Void, String, Void>  {
      */
     public void setCode(int code) {
         this.code = code;
+    }
+
+    /**
+     * Obtiene array con budsqueda realizada
+     * @return
+     */
+    public ArrayList<String> getSearchSTR() {
+        return SearchSTR;
     }
 }

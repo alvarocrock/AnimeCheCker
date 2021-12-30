@@ -31,6 +31,7 @@ public class MainController  {
     private ArrayList<Capitulo> caps_nuevos;
     private ArrayList<Serie> series_nuevas;
     private ArrayList<Serie> series_guardadas;
+    private ArrayList<Serie> result_search;
     private ArrayList<Capitulo> caps_guardados;
     private ChapDetails chapDetails;
     private SerieDetails details;
@@ -55,6 +56,7 @@ public class MainController  {
         series_nuevas = new ArrayList<>();
         series_guardadas = new ArrayList<>();
         caps_guardados = new ArrayList<>();
+        result_search = new ArrayList<>();
         singleton = null;
 
     }
@@ -126,6 +128,9 @@ public class MainController  {
                 }
                 if (option.equals("chatDetails")) {
                     chapDetails = traductor.getChapDetails(obtener.getCharDetails_list());
+                }
+                if (option.equals("busca")){
+                    result_search = traductor.getBusqueda(obtener.getSearchSTR());
                 }
 
 
@@ -230,6 +235,10 @@ public class MainController  {
         return cuerpo;
     }
 
+    public void Buscar(String url){
+        crearlistas(url,"busca");
+    }
+
     /**
      * Obtiene el usuario guardado
      * @return user
@@ -326,5 +335,13 @@ public class MainController  {
      */
     public void setReponse(int reponse) {
         this.reponse = reponse;
+    }
+
+    /**
+     * Obtiene resultado de la busqueda
+     * @return
+     */
+    public ArrayList<Serie> getResult_search() {
+        return result_search;
     }
 }

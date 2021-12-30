@@ -8,4 +8,6 @@ public class Constantes {
     public final static String FICHEROUSUARIOS= "usuarios.txt";
     public final static String CORREO= "animenotifierBETA@gmail.com";
     public final static String CLAVE= "Notifier2000";
+    public final static String urlbusqueda = "https://jkanime.net/buscar/";
+    //url prueba https://jkanime.net/buscar/fate/1/
 }
