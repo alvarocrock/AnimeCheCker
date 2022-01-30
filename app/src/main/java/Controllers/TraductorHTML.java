@@ -51,9 +51,10 @@ public class TraductorHTML {
                     ref= list[1];
                 }
             }else if (s.contains("<h3>")){
-                s= s.replace("<",";");
-                s= s.replace(">",";");
-                list= s.split(";");
+                s= s.replace("<","¬");
+                s= s.replace(">","¬");
+                s = s.replace("&#039;","'");
+                list= s.split("¬");
                 if (list.length==4){
                     nombre=list[2];
                 } else if (list.length==3){
